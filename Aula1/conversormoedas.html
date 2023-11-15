@@ -30,10 +30,10 @@
             reais = parseFloat(window.prompt('Digite o valor em reais'));
         }while (isNaN(reais));
         
-        let dolarReal = 4.86 / reais;
-        let euroReal = 5.29 / reais;
-        let libraReal = 6.0 / reais;
-        let bitcoinReal = 171.99390 / reais;
+        let dolarReal = reais / 4.86;
+        let euroReal = reais / 5.29;
+        let libraReal = reais / 6.08;
+        let bitcoinReal = reais / 171.99390;
 
         var resultadoDiv = document.getElementById('resultado');
         resultadoDiv.innerHTML = ` R$${reais}<br>
@@ -44,8 +44,6 @@
         `
     });
     </script>
-
-
 
 </body>
 </html>
