@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="temperatura.css">
+    <title>Conversor de Temperatura</title>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="page-title">
+          Conversor de Temperatura
+        </h1>
+        <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-aluraflix.svg" class="page-logo" alt="">
+        <div id="resultado"></div>
+      </div>
+      <a href="https://alura.com.br/" target="_blank">
+        <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+        <img src="termometro.png">
+      </a>   
+      
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+        let celsius;
+
+        do {
+            celsius = parseFloat(window.prompt('Digite a temperatura em graus célsius'));
+        }while (isNaN(celsius));
+        
+        let kelvin = celsius + 273;
+        let fahrenheit = (celsius * 9/5) + 32;
+
+        var resultadoDiv = document.getElementById('resultado');
+        resultadoDiv.innerHTML = ` C°${celsius}<br>
+        K°${kelvin.toFixed(1)}<br>
+        F°${fahrenheit.toFixed(1)}<br>
+        `
+    });
+    </script>
+
+</body>
+</html>
