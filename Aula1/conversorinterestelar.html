@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="conversorinterestelar.css">
+    <title>Conversor Interestelar</title>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="page-title">
+          Conversor Interestelar
+        </h1>
+        <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-aluraflix.svg" class="page-logo" alt="">
+        <div id="resultado"></div>
+      </div>
+      <a href="https://alura.com.br/" target="_blank">
+        <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+        <img src="astronauta.png">
+      </a>   
+      
+
+    <script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+        let estrela1 = window.prompt('Digite o nome da estrela/astro mais próximo');
+        let estrelaalvo = window.prompt('Digite o nome da estrela/astro para onde você quer ir');
+        let distanciaAl = window.prompt('Digite a distancia em anos-luz do ponto de partida e chegada');
+        let aeronave = window.prompt('Digite o nome da sua aeronave/missão');
+        let velocidade = window.prompt('Digite a velocidade da sua aeronave em km por hora');
+        let distanciaKm = distanciaAl * 9.461e12;
+        let dias = distanciaKm / (velocidade * 24);
+
+        let resultadoDiv = document.getElementById('resultado');
+        resultadoDiv.innerHTML = `
+            <p>A distância entre ${estrela1} e ${estrelaalvo} é de: ${distanciaKm} Km</p>
+            <p>A tripulação da ${aeronave} levará ${dias.toFixed(0)} dias para chegar ao destino.</p>
+        `;
+    });
+    </script>
+
+</body>
+</html>
