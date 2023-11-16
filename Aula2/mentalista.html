@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Mentalista</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">
+          Mentalista
+        </h1>
+        <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-aluraflix.svg" class="page-logo" alt="">
+      </div>
+      <a href="https://alura.com.br/" target="_blank">
+        <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+        <img src="https://caelum-online-public.s3.amazonaws.com/assets-imersaodev/Ilustra%C3%A7%C3%A3o-c%C3%A9rebro+1.png">
+      </a>
+
+      <script>
+        let numeroSecreto = parseInt(Math.random() * 1001 +1);
+        let chute;
+        let contador = 0;
+        let tentativas = 10;
+        
+        while(chute != numeroSecreto){
+          chute = prompt('Digite um número entre 1 e 1000');
+          contador++;//adicionando um contador de chutes
+          tentativas--;//adicionando limite de tentativas
+            if (chute == numeroSecreto){
+            alert(`Você acertou!!! Depois de ${contador} tentativas.`);
+            } else if (chute > numeroSecreto){
+            alert(`Errou, você chutou ${chute}, o número é menor. ${tentativas} tentativas restantes.`);
+            } else if (chute < numeroSecreto){
+            alert(`Errou, você chutou ${chute}, o número secreto é maior. ${tentativas} tentativas restantes`);
+            }
+
+            if(tentativas === 0){
+              alert(`Suas tentativas acabaram! O número secreto era ${numeroSecreto} Tente outra vez!!!`);
+              break;
+            }
+            else if(chute === numeroSecreto){
+              alert('Parabéns, você ganhou!')
+              break;
+            }
+            else if(tentativas  ===  0 && chute === numeroSecreto){
+              alert('Parabéns você ganhou, mas foi por pouco hein');
+              break;
+            }
+        }
+        location.reload();//reiniciando o jogo
+      </script>
+
+</body>
+</html>
