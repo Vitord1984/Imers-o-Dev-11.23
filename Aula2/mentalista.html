@@ -28,7 +28,7 @@
           chute = prompt('Digite um número entre 1 e 1000');
           contador++;//adicionando um contador de chutes
           tentativas--;//adicionando limite de tentativas
-            if (chute == numeroSecreto){
+            if (chute === numeroSecreto){
             alert(`Você acertou!!! Depois de ${contador} tentativas.`);
             } else if (chute > numeroSecreto){
             alert(`Errou, você chutou ${chute}, o número é menor. ${tentativas} tentativas restantes.`);
