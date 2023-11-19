@@ -1,27 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Aluraflix</title>
+    <title>Aluragames</title>
 </head>
 <body>
     <div class="container">
         <h1 class="page-title">
-          A.
+          Aluragames
         </h1>
         <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-aluraflix.svg" class="page-logo" alt="">
+        
+        <div class="jogos-container"></div>
       </div>
       <a href="https://alura.com.br/" target="_blank">
         <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
       </a>
       
-      <script>
-        let listaJogos = [
+    <script>
+      let listaJogos = [
         "bully.jpg",
         "crash.jpg",
-        "bully.jpg",
         "defjam.jpg",
         "fifastreet2.jpg",
         "gtasa.jpg",
@@ -32,15 +33,37 @@
         "mortalkombatsm.jpg",
         "silenthill2.jpg",
         "black.jpg"
-        ];
+      ];
 
-        // for (let i=0; i < listaJogos.length; i++){
-        // document.write(`<img src= "${listaJogos[i]}">`);
-        // }
+      let nomeJogos = [
+        "Bully",
+        "Crash of the Titans",
+        "DefJam Fight for NY",
+        "Fifa Street 2",
+        "GTA San Andreas",
+        "Gungrave",
+        "Midnight Club 3",
+        "Naruto Ultimate Ninja 5",
+        "God of War II",
+        "MK Shaolin Monks",
+        "Silent Hill 2",
+        "Black"
+      ];
 
-        listaJogos.forEach((el) => {
-          document.write(`<img src= "${el}">`);
-        });
-      </script>
+      let container = document.querySelector(".jogos-container");
+
+      listaJogos.forEach((jogo, index) => {
+        let jogoElement = document.createElement("div");
+        let imagemElement = document.createElement("img");
+        let nomeJogoElement = document.createElement("p");
+
+        imagemElement.src = jogo;
+        nomeJogoElement.textContent = nomeJogos[index];
+
+        jogoElement.appendChild(imagemElement);
+        jogoElement.appendChild(nomeJogoElement);
+        container.appendChild(jogoElement);
+      });
+    </script>
 </body>
 </html>
